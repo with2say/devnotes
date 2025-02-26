@@ -1,11 +1,12 @@
 ---
 layout: default
-title: "테스트"
+title: "Home"
 ---
 
-여기는 마크다운 본문.  
-여기서 단일 수식은 $E = mc^2$,
-블록 수식은:
-$$
-\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
-$$
+# PDE / PINN 자료 정리
+
+아래는 새로운 글 목록이야.
+
+{% for post in site.posts %}
+- [{{ post.title }}]({{ post.url }})
+{% endfor %}

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>{{ page.title | default: site.title }}</title>
 
-    <!-- MathJax 스크립트 (3.x) -->
+    <!-- MathJax (3.x) 설정 -->
     <script>
       MathJax = {
         tex: {
@@ -14,10 +14,45 @@
     </script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
-    <!-- 혹시 Bootstrap, css 등을 추가하고 싶으면 여기에 -->
+    <style>
+      /* 간단 스타일 */
+      body { margin: 0; font-family: Arial, sans-serif; }
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 1rem;
+      }
+      header nav a {
+        color: #fff;
+        margin-right: 1rem;
+        text-decoration: none;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+      footer {
+        background-color: #f2f2f2;
+        padding: 1rem;
+        text-align: center;
+        margin-top: 2rem;
+      }
+    </style>
   </head>
   <body>
-    <!-- 실제 페이지 콘텐츠 삽입 -->
-    {{ content }}
+    <header>
+      <h1 style="display:inline;">{{ site.title }}</h1>
+      <nav style="display:inline; margin-left:2rem;">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/about' | relative_url }}">About</a>
+      </nav>
+    </header>
+    <div class="container">
+      {{ content }}
+    </div>
+    <footer>
+      &copy; 2025 {{ site.title }}
+    </footer>
   </body>
 </html>
